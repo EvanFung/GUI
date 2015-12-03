@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    .nav-bar {
+        top: 0;
+        left: 0;
+        width: 100%;
+        position: fixed;
+        background: #333;
+    }
+
+    .nav-ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-ul li {
+        display: inline-block;
+        padding: 25px;
+        text-align: center;
+        font-size: 18px;
+        padding-left: 25px;
+        padding-right: 25px;
+
+    }
+
+    .nav-ul li:hover {
+        background: #111;
+    }
+
+    .nav-ul a {
+        text-decoration: none;
+        color: white;
+
+    }
+
+    .nav-bar-right-side {
+        float: right;
+        list-style-type: none;
+    }
+
+    .head {
+        background-color: #4CAF50;
+    }
+
+
+</style>
+<body>
+    <div class="nav-bar">
+        <ul class="nav-ul">
+            <li class="head"><a href="">Home</a></li>
+            <li><a href="">Profile</a></li>
+            <li><a href="">Fights Details</a></li>
+            <li><a href="">Hotel Booking</a></li>
+            <ul class="nav-bar-right-side">
+                <li><a href="">About</a></li>
+                <li><a href="">Login</a></li>
+            </ul>
+        </ul>
+    </div>
+</body>
+</html>
