@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-	<link rel="stylesheet" type="text/css" href="css/login.css"/>
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="css/login.css"/>
+	<link rel="stylesheet" type="text/css" href="css/register.css"/>	
 	<script type="text/javascript" src="jslib/jquery-1.11.3.js"></script>
 	<script type="text/javascript" src="jslib/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" charset="utf-8" src="jslib/jquery.leanModal.min.js"></script>
 	<script type="text/javascript" src="js/login.js"></script>
+	<script type="text/javascript" src="js/register.js"></script>
 </head>
 <style>
     .nav-bar {
@@ -64,8 +66,9 @@
             <li><a href="">Fights Details</a></li>
             <li><a href="">Hotel Booking</a></li>
             <ul class="nav-bar-right-side">
-                <li><a href="">About</a></li>
-                <li><a href="#loginWindow" id="login">Login</a></li>
+                <li id="nav_login"><a href="#loginWindow" id="login">Login</a></li>
+                <li id="nav_register"><a href="#registerWindow" id="register">Register</a></li>
+				<li style="display:none;" id="nav_logout"><a id="logout">Logout</a></li>
             </ul>
         </ul>
     </div>
@@ -81,6 +84,50 @@
 
 		<div class="center">
 			<input type="submit" id='btn_login' class="btn-blu hidemodal" value="Login" tabindex="3">
+		</div>
+	</div>
+	<div id="registerWindow" style="display:none;">
+		<h1>Member Register</h1>
+		<table border="0">
+			<tr>
+				<td width="20%"></td>
+				<td width="30%">
+					<label>First Name:</label>
+					<input type="text" id="fName" class="txtfield" tabindex="1">
+				</td>
+				<td width="30%">
+					<label>Last Name:</label>
+					<input type="text" id="lName" class="txtfield" tabindex="2">
+				</td>
+				<td width="20%"><font color="red" id="nameWrongMsg">*</font></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td colspan="2">
+					<label>E-mail:</label>
+					<input type="text" id="email" class="txtfield" tabindex="3">
+				</td>
+				<td><font color="red" id="emailWrongMsg">*</font></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td colspan="2">
+					<label>Password:</label>
+					<input type="password" id="rPassword" class="txtfield" tabindex="4">
+				</td>
+				<td><font color="red" id="pwdWrongMsg">*</font></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td colspan="2">
+					<label>Confirm Password:</label>
+					<input type="password" id="cPassword" class="txtfield" tabindex="4">
+				</td>
+				<td><font color="red" id="cPwdWrongMsg">*</font></td>
+			</tr>
+		</table>
+		<div class="center">
+			<input type="submit" id='btn_register' class="btn-blu hidemodal" value="Create Account" tabindex="5">
 		</div>
 	</div>
 	<div id="welcome" style="display:none;">

@@ -22,6 +22,10 @@ $(document).ready(function(){
 				});
 				
 				if(error == false) {
+					$("#nav_login").hide();
+					$("#nav_register").hide();
+					$("#nav_logout").show();
+					
 					$("#space").show();
 					$("#wrongMessage").hide();
 					$("#loginWindow").animate({
@@ -62,5 +66,11 @@ $(document).ready(function(){
 	$("#login").click(function(){
 		$("#wrongMessage").hide();
 		$("#space").show();
+	});
+	
+	$("#logout").click(function(){
+		$("#nav_login").show();
+		$("#nav_register").show();
+		$("#nav_logout").hide();
 	});
 });	
