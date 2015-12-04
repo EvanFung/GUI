@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+	<link rel="stylesheet" type="text/css" href="css/login.css"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<script type="text/javascript" src="jslib/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="jslib/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="jslib/jquery.leanModal.min.js"></script>
+	<script type="text/javascript" src="js/login.js"></script>
 </head>
 <style>
     .nav-bar {
@@ -59,9 +65,26 @@
             <li><a href="">Hotel Booking</a></li>
             <ul class="nav-bar-right-side">
                 <li><a href="">About</a></li>
-                <li><a href="">Login</a></li>
+                <li><a href="#loginWindow" id="login">Login</a></li>
             </ul>
         </ul>
     </div>
+	<div id="loginWindow" style="display:none;">
+		<h1>User Login</h1>
+		<div id="wrongMessage" style="display:none;">Incorrect username or password!</div>
+		<div id="space"><br/></div>
+		<label for="username">Username:</label>
+		<input type="text" name="username" id="username" class="txtfield" tabindex="1">
+
+		<label for="password">Password:</label>
+		<input type="password" name="password" id="password" class="txtfield" tabindex="2">
+
+		<div class="center">
+			<input type="submit" id='btn_login' class="btn-blu hidemodal" value="Login" tabindex="3">
+		</div>
+	</div>
+	<div id="welcome" style="display:none;">
+		<div id="welcomeMessage"></div>
+	</div>
 </body>
 </html>
