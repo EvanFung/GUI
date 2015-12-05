@@ -1,5 +1,9 @@
+html {
+    height: 100%
+}
+
 body { 
-	background: #f0f0f0 url('img/bg.gif'); 	
+	background: #f0f0f0 url('./img/bg.gif'); 	
 	width: 99%;
 	height: 99%;
 }
