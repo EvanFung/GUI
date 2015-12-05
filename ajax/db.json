@@ -14,5 +14,37 @@
 			"FName":"Chan",
 			"LName":"Siu Man"
 		}
+	],
+	"flights": [
+		{
+			"id":"C5978",
+			"time_origin":"UTC+08:00",
+			"start_date":"2015-12-05",
+			"start_time":"12:05",
+			"arrive_time":"13:50",
+			"flight_time":"1h 45m",
+			"fly_from":"Taipei Taoyuan Intl.",
+			"fly_from_country":"Taipei",
+			"airline":"Hong Kong Airlines",
+			"price":"HK$1,759.00",
+			"rank":"7.6",
+			"left":{"fc":"1","b":"2","ec":"10+","pe":"0"},
+			"stop":"0"
+		},
+		{
+			"id":"C3142",
+			"time_origin":"UTC+08:00",
+			"start_date":"2015-12-05",
+			"start_time":"23:05",
+			"arrive_time":"01:05",
+			"flight_time":"2h 0m",
+			"fly_from":"Taipei Taoyuan Intl.",
+			"fly_from_country":"Taipei",
+			"airline":"Hong Kong Airlines",
+			"price":"HK$1,529.00",
+			"rank":"8.6",
+			"left":{"fc":"10+","b":"10+","ec":"10+","pe":"10+"},
+			"stop":"0"
+		}
 	]
 }

@@ -1,51 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title></title>
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>
 	<link rel="stylesheet" type="text/css" href="css/flights.css"/>
+	<link rel="stylesheet" type="text/css" href="css/fm.datetator.jquery.css"/>
 	<script type="text/javascript" src="jslib/jquery-1.11.3.js"></script>
 	<script type="text/javascript" src="jslib/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="jslib/jquery-ui.js"></script>
+	<script type="text/javascript" src="jslib/fm.datetator.jquery.js"></script>
 	<script type="text/javascript" src="js/flights.js"></script>
+	<script type="text/javascript" charset="utf-8" src="jslib/jquery.leanModal.min.js"></script>
 </head>
 <body>
     <div id="flights">
-        <div class="search_flights_window" style="background-image: url('./img/bg_flights.jpg')">
-			<div class="search_flights_table">
-				<h1>Search Flights</h1>
+        <div id="search_flights_window" style="background-image: url('./img/bg_flights.jpg');">
+			<div id="search_flights_table">
+				<h1>Search Flights - To Hong Kong</h1>
 				<table border="0">
-				<tr>
-					<td width="50%">
-						<label>Return</label>
-						<label>One way</label>
-					</td>
-					<td width="50%"></td>
-				</tr>
-				<tr>
-					<td>
-						<label>Flying from</label>
-						<input type="text" placeholder="City" class="txtfield" tabindex="1" />
-					</td>	
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<label>Departing</label>					
-						<input type="date" id="depaetingDate" placeholder="dd/mm/yyyy" class="txtfield" tabindex="2" /></td>
-					</td>
-				</tr>
-				
-				<label>Returning</label>
-				<input type="date" id="returningDate" placeholder="dd/mm/yyyy" class="txtfield" tabindex="3" />
-				<label>Adults(18+)</label>
-				
-				<label>Children(0-17)</label>
-				Search
+					<tr>
+						<td width="25%">
+							<label class="radiusbtn rbtnselect" id="returnbtn">Return</label>
+						</td>
+						<td width="25%">
+							<label class="radiusbtn" id="onewaybtn">One way</label>
+						</td>
+						<td width="50%"><input type="hidden" id="flights_type" value="return"/></td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<label>Flying from</label>
+							<input id="flying_from" type="text" placeholder="City" class="txtfield" tabindex="1" />
+						</td>	
+						<td></td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<label>Departing</label>					
+							<input id="departingDate" class="txtfield" tabindex="2" /></td>
+						</td>
+						<td id="returnDatetd">
+							<label>Returning</label>
+							<input id="returningDate" class="txtfield" tabindex="3" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Adults(18+)</label>
+							<select id="num_adult" class="txtfield" tabindex="4">
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+							<select/>							
+						</td>
+						<td>
+							<label>Children(0-17)</label>
+							<select id="num_child" class="txtfield" tabindex="5">
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+							<select/>
+						</td>
+						<td>
+							<label>Preferred Class</label>
+							<select id="preferred_class" class="txtfield" tabindex="6">
+								<option value="all">All</option>
+								<option value="fc">First Class</option>
+								<option value="b">Business</option>
+								<option value="ec">Economy/Coach</option>
+								<option value="pe">Premium Economy</option>
+							<select/>
+						</td>
+					</tr>
+					<tr>
+						<td><input type="button" id="btn_search" class="btn-blu" style="background-color:#D4A900;color:black" value="Search" tabindex="6"></td>
+						<td></td>
+					</tr>
 				</table>
 			</div>
 		</div>
+		<div id="result_window" style="display:none">
+			<h1>Select your departure to Hong Kong</h1>
+			<div id="filterContainer">
+				<fieldset>
+					<legend>
+						Stops
+					</legend>
+					<ul>
+						<li>
+							<label>
+								<input id="stopFilter_0stop" type="checkbox" checked="checked">
+								<div id="sf0stop">Direct (0)</div>								
+							</label>
+						</li>
+						<li> 
+							<label>
+								<input id="stopFilter_1stop" type="checkbox">
+								<div id="sf1stop">1 Stop (0)</div>
+							</label>
+						</li>
+						<li> 
+							<label>
+								<input id="stopFilter_2stop" type="checkbox">
+								<div id="sf1stop">2 Stop (0)</div>
+							</label>
+						</li>
+					</ul>
+				</fieldset>
+				<fieldset>
+					<legend>
+						Airlines
+					</legend>
+					<ul>
+						<li>
+							<label>
+								<input id="airlinesFilter_HKA" type="checkbox" checked="checked">
+								<div id="afHKA">Hong Kong Airlines (0)</div>
+							</label>
+						</li>
+						<li> 
+							<label>
+								<input id="airlinesFilter_CP" type="checkbox" checked="checked">
+								<div id="afCP">Cathay Pacific (0)</div>
+							</label>
+						</li>
+						<li> 
+							<label>
+								<input id="airlinesFilter_D" type="checkbox" checked="checked">
+								<div id="afD">Dragonair (0)</div>
+							</label>
+						</li>
+						<li> 
+							<label>
+								<input id="airlinesFilter_EVAA" type="checkbox" checked="checked">
+								<div id="afEVAA">EVA Airways (0)</div>
+							</label>
+						</li>
+					</ul>
+				</fieldset>
+				<fieldset>
+					<legend>
+						Rank
+					</legend>
+					<ul>
+						<li>
+							<label>
+								<input id="rankFilter_EF" type="checkbox" checked="checked">
+								<div id="rfEF">Excellent Flight (0)</div>
+							</label>
+						</li>
+						<li> 
+							<label>
+								<input id="rankFilter_VGF" type="checkbox" checked="checked">
+								<div id="rfVGF">Very Good Flight (0)</div>
+							</label>
+						</li>
+						<li> 
+							<label>
+								<input id="rankFilter_GF" type="checkbox" checked="checked">
+								<div id="rfGF">Good Flight (0)</div>
+							</label>
+						</li>
+						<li> 
+							<label>
+								<input id="rankFilter_BF" type="checkbox">
+								<div id="rfBF">Bad Flight (0)</div>
+							</label>
+						</li>
+					</ul>
+				</fieldset>
+				<fieldset>
+					<legend>
+						Departure time
+					</legend>
+					<ul>
+						<li>
+							<label>
+								<input id="timeFilter_0" type="checkbox" checked="checked">
+								<div id="tf1">Early Morning (0 - 4:59)</div>
+							</label>
+						</li>
+						<li> 
+							<label>
+								<input id="timeFilter_1" type="checkbox" checked="checked">
+								<div id="tf2">Morning (5:00 - 11:59)</div>
+							</label>
+						</li>
+						<li> 
+							<label>
+								<input id="timeFilter_2" type="checkbox" checked="checked">
+								<div id="tf3">Afternoon (12:00 - 17:59)</div>
+							</label>
+						</li>
+						<li> 
+							<label>
+								<input id="timeFilter_3" type="checkbox" checked="checked">
+								<div id="tf4">Evening (18:00 - 23:59)</div>
+							</label>
+						</li>
+					</ul>
+				</fieldset>
+			</div>
+			<div id="result"></div>
+		</div>
+		<div id="paymentWindow" style="display:none;">
+			<table>
+				<tr>
+					<td>
+						<label>Name:<div class="cus_name">CHAN Tai Man</div></label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Total Amount Payable(HKD): 
+						<div class="pay_price">$1,759</div></label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Please select one of the Payment Methods: </label>
+						<div class="pay_method">
+							<label for="visa">visa</label>
+							<input type="radio" id="visa" name="pay_method" value="visa">
+							<label for="mastercard">mastercard</label>
+							<input type="radio" id="mastercard" name="pay_method" value="mastercard">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Card Number
+						<div class="pay_card_number" style="display:inline">
+							<input type="text" maxlength="4" size="4" id="pm1">
+							<input type="password" maxlength="4" size="4" id="pm2">
+							<input type="text" maxlength="4" size="4" id="pm3">
+							<input type="text" maxlength="4" size="4" id="pm4">
+						</div>
+						(The second 4 Digits will be masked by ****)</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Expiry Date 
+							<input type="text" maxlength="2" size="2" id="pm5">
+							<input type="text" maxlength="2" size="2" id="pm6">
+							Security Code 
+							<input type="text" maxlength="4" size="4" id="pm7">
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="center"><label><input type="button" id="btn_pay" class="btn-blu" value="Pay Now" tabindex="6"></label></div>
+					</td>
+				</tr>
+			</table>
+		</div>
     </div>
+	<div id="complete_payment" style="display:none;">
+		<div id="completeMessage"></div>
+	</div>
 </body>
 </html>
