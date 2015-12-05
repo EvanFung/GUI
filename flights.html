@@ -15,17 +15,35 @@
         <div class="search_flights_window" style="background-image: url('./img/bg_flights.jpg')">
 			<div class="search_flights_table">
 				<h1>Search Flights</h1>
-				<label>Return</label>
-				<label>One way</label>				
-				<label>Flying from</label>
-				<input type="text" placeholder="City" class="txtfield" tabindex="1" />
-				<label>Departing</label>
-				<input type="date" id="depaetingDate" placeholder="dd/mm/yyyy" class="txtfield" tabindex="2" />
+				<table border="0">
+				<tr>
+					<td width="50%">
+						<label>Return</label>
+						<label>One way</label>
+					</td>
+					<td width="50%"></td>
+				</tr>
+				<tr>
+					<td>
+						<label>Flying from</label>
+						<input type="text" placeholder="City" class="txtfield" tabindex="1" />
+					</td>	
+					<td></td>
+				</tr>
+				<tr>
+					<td>
+						<label>Departing</label>					
+						<input type="date" id="depaetingDate" placeholder="dd/mm/yyyy" class="txtfield" tabindex="2" /></td>
+					</td>
+				</tr>
+				
 				<label>Returning</label>
 				<input type="date" id="returningDate" placeholder="dd/mm/yyyy" class="txtfield" tabindex="3" />
 				<label>Adults(18+)</label>
+				
 				<label>Children(0-17)</label>
 				Search
+				</table>
 			</div>
 		</div>
     </div>

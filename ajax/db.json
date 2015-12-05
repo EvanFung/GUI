@@ -1,25 +1,18 @@
 {
-	"clients": [{
-		"id":"C0001",
-		"username":"a",
-		"password":"a",
-		"FName":"Chan",
-		"LName":"Tai Man",
-		"Area Code":"853",
-		"Tel":"23174567",
-		"Address":"Macao",
-		"PassportID":"0123456789"
-	},
-		
-	{
-		"id":"C0002",
-		"username":"b",
-		"password":"b",
-		"FName":"Chan",
-		"LName":"Siu Man",
-		"Area Code":"886",
-		"Tel":"76547132",
-		"Address":"Tai Wan",
-		"PassportID":"0123456789"
-	}]
+	"clients": [
+		{
+			"id":"C0001",
+			"Email":"a",
+			"password":"a",
+			"FName":"Chan",
+			"LName":"Tai Man"
+		},		
+		{
+			"id":"C0002",
+			"Email":"b",
+			"password":"b",
+			"FName":"Chan",
+			"LName":"Siu Man"
+		}
+	]
 }

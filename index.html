@@ -1,137 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title></title>
-	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <title>BestTrip Travel Agency</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
 	<link rel="stylesheet" type="text/css" href="css/login.css"/>
-	<link rel="stylesheet" type="text/css" href="css/register.css"/>	
-	<script type="text/javascript" src="jslib/jquery-1.11.3.js"></script>
-	<script type="text/javascript" src="jslib/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" charset="utf-8" src="jslib/jquery.leanModal.min.js"></script>
-	<script type="text/javascript" src="js/login.js"></script>
-	<script type="text/javascript" src="js/register.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/register.css"/>
 </head>
-<style>
-    .nav-bar {
-        top: 0;
-        left: 0;
-        width: 100%;
-        position: fixed;
-        background: #333;
-    }
 
-    .nav-ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
+<header class="banner" role="banner">
+    <div class="grid">
+        <a href="#hero" class="logo scrollto" rel="bookmark">BestTrip Travel</a>
 
-    .nav-ul li {
-        display: inline-block;
-        padding: 25px;
-        text-align: center;
-        font-size: 18px;
-        padding-left: 25px;
-        padding-right: 25px;
+        <button type="button" role="button" aria-label="Toggle Navigation" data-navicon="button"
+                class="icon-menu navicon navicon-x">
+            <span class="navicon__lines"></span>
+        </button>
 
-    }
-
-    .nav-ul li:hover {
-        background: #111;
-    }
-
-    .nav-ul a {
-        text-decoration: none;
-        color: white;
-
-    }
-
-    .nav-bar-right-side {
-        float: right;
-        list-style-type: none;
-    }
-
-    .head {
-        background-color: #4CAF50;
-    }
-
-
-</style>
-<body>
-    <div class="nav-bar">
-        <ul class="nav-ul">
-            <li class="head"><a href="">Home</a></li>
-            <li><a href="">Profile</a></li>
-            <li><a href="">Fights Details</a></li>
-            <li><a href="">Hotel Booking</a></li>
-            <ul class="nav-bar-right-side">
-                <li id="nav_login"><a href="#loginWindow" id="login">Login</a></li>
-                <li id="nav_register"><a href="#registerWindow" id="register">Register</a></li>
-				<li style="display:none;" id="nav_logout"><a id="logout">Logout</a></li>
+        <nav role="navigation">
+            <ul class="nav__list">
+                <li class="nav__list-item">
+                    <a href="#">Profile</a>
+                </li>
+                <li class="nav__list-item">
+                    <a href="#">Fights Details</a>
+                </li>
+                <li class="nav__list-item">
+                    <a href="#">Hotel Booking</a>
+                </li>
+                <li class="nav__list-item" id="nav_login">
+                    <a href="#loginWindow" id="login">Login</a>
+                </li>
+                <li class="nav__list-item" id="nav_register">
+                    <a href="#registerWindow" id="register">Register</a>
+                </li>
+				<li class="nav__list-item" style="display:none;" id="nav_logout">
+					<a id="logout">Logout</a>
+				</li>
             </ul>
-        </ul>
+        </nav>
     </div>
-	<div id="loginWindow" style="display:none;">
-		<h1>User Login</h1>
-		<div id="wrongMessage" style="display:none;">Incorrect username or password!</div>
-		<div id="space"><br/></div>
-		<label for="username">Username:</label>
-		<input type="text" name="username" id="username" class="txtfield" tabindex="1">
+</header>
 
-		<label for="password">Password:</label>
-		<input type="password" name="password" id="password" class="txtfield" tabindex="2">
+<div class="hero" id="hero">
+    <h1 class="hero__title"></h1>
+</div>
 
-		<div class="center">
-			<input type="submit" id='btn_login' class="btn-blu hidemodal" value="Login" tabindex="3">
-		</div>
-	</div>
-	<div id="registerWindow" style="display:none;">
-		<h1>Member Register</h1>
-		<table border="0">
-			<tr>
-				<td width="20%"></td>
-				<td width="30%">
-					<label>First Name:</label>
-					<input type="text" id="fName" class="txtfield" tabindex="1">
-				</td>
-				<td width="30%">
-					<label>Last Name:</label>
-					<input type="text" id="lName" class="txtfield" tabindex="2">
-				</td>
-				<td width="20%"><font color="red" id="nameWrongMsg">*</font></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td colspan="2">
-					<label>E-mail:</label>
-					<input type="text" id="email" class="txtfield" tabindex="3">
-				</td>
-				<td><font color="red" id="emailWrongMsg">*</font></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td colspan="2">
-					<label>Password:</label>
-					<input type="password" id="rPassword" class="txtfield" tabindex="4">
-				</td>
-				<td><font color="red" id="pwdWrongMsg">*</font></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td colspan="2">
-					<label>Confirm Password:</label>
-					<input type="password" id="cPassword" class="txtfield" tabindex="4">
-				</td>
-				<td><font color="red" id="cPwdWrongMsg">*</font></td>
-			</tr>
-		</table>
-		<div class="center">
-			<input type="submit" id='btn_register' class="btn-blu hidemodal" value="Create Account" tabindex="5">
-		</div>
-	</div>
-	<div id="welcome" style="display:none;">
-		<div id="welcomeMessage"></div>
-	</div>
+<main class="section" id="fillinfo" role="main">
+    <div class="grid">
+        <h1>Test</h1>
+
+        <h1>Test</h1>
+
+        <h1>Test</h1>
+
+        <h1>Test</h1>
+
+        <h1>Test</h1>
+
+        <h1>Test</h1>
+
+        <h1>Test</h1>
+
+        <h1>Test</h1>
+
+        <h1>Test</h1>
+
+        <h1>Test</h1>
+    </div>
+</main>
+<div id="loginWindow" style="display:none;">
+    <h1>User Login</h1>
+
+    <div id="wrongMessage" style="display:none;">Incorrect username or password!</div>
+    <div id="space"><br/></div>
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username" class="txtfield" tabindex="1">
+
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" class="txtfield" tabindex="2">
+
+    <div class="center">
+        <input type="submit" id='btn_login' class="btn-blu hidemodal" value="Login" tabindex="3">
+    </div>
+</div>
+
+<div id="registerWindow" style="display:none;">
+    <h1>Member Register</h1>
+    <table border="0">
+        <tr>
+            <td width="20%"></td>
+            <td width="30%">
+                <label>First Name:</label>
+                <input type="text" id="fName" class="txtfield" tabindex="1">
+            </td>
+            <td width="30%">
+                <label>Last Name:</label>
+                <input type="text" id="lName" class="txtfield" tabindex="2">
+            </td>
+            <td width="20%"><font color="red" id="nameWrongMsg">*</font></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="2">
+                <label>E-mail:</label>
+                <input type="text" id="email" class="txtfield" tabindex="3">
+            </td>
+            <td><font color="red" id="emailWrongMsg">*</font></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="2">
+                <label>Password:</label>
+                <input type="password" id="rPassword" class="txtfield" tabindex="4">
+            </td>
+            <td><font color="red" id="pwdWrongMsg">*</font></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="2">
+                <label>Confirm Password:</label>
+                <input type="password" id="cPassword" class="txtfield" tabindex="4">
+            </td>
+            <td><font color="red" id="cPwdWrongMsg">*</font></td>
+        </tr>
+    </table>
+    <div class="center">
+        <input type="submit" id='btn_register' class="btn-blu hidemodal" value="Create Account" tabindex="5">
+    </div>
+</div>
+
+<div id="welcome" style="display:none;">
+    <div id="welcomeMessage"></div>
+</div>
+
 </body>
+<script src='jslib/jquery-2.1.4.js'></script>
+<script type="text/javascript" src="jslib/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="jslib/jquery.leanModal.min.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+<script type="text/javascript" src="js/register.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
 </html>

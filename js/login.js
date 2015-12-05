@@ -13,7 +13,7 @@ $(document).ready(function(){
 				$.each(data, function(key, value) {
 					if(key=="clients"){
 						for(i=0; i<value.length; i++){
-							if(username == value[i].username && password == value[i].password){
+							if(username == value[i].Email && password == value[i].password){
 								error = false;
 								name = value[i].FName+" "+value[i].LName;
 							}
