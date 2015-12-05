@@ -99,13 +99,51 @@ a {
   text-decoration: none;
 }
 
-h1 {
+.section h1 {
   margin-top: 0;
-  padding-top: 21px;
+  padding-top: 20px;
   font-family: "Oswald", sans-serif;
-  font-size: 30px;
-  line-height: 1.8;
-  text-transform: uppercase;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+}
+
+.hotel-details-head {
+    padding: 1px;
+    background-color: #333;
+}
+
+.section ul li {
+    display: inline-block;
+    width: 490px;
+    margin: 10px;
+    padding: 0px;
+}
+
+.hotel-details {
+    height: 700px;
+    width: inherit;
+    font-size: 20px;
+}
+
+.section ul li div img {
+    margin: 0px;
+    padding: 0px;
+    width: inherit;
+    height: 90%;
+}
+
+.hotel-name {
+    padding: 5px;
+    text-align: center;
+    background-color: lightblue;
+}
+
+.hotel-price {
+    margin-top: -6px;
+    padding: 5px;
+    text-align: center;
+    background-color: deepskyblue;
 }
 
 p {
@@ -277,11 +315,6 @@ nav a {
     margin-bottom: -20px;
 }
 
-.section {
-  background: #333;
-  color: #CCC;
-}
-
 .is-sticky {
   position: fixed;
   top: 0;
@@ -322,4 +355,17 @@ nav a {
     -webkit-transform: translateY(14px);
             transform: translateY(14px);
   }
+}
+
+.section {
+  background: whitesmoke;
+}
+
+#footer {
+    background-color:#333;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:20px;
+    line-height: 2;
 }
