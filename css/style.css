@@ -7,3 +7,7 @@ body {
 	width: 99%;
 	height: 99%;
 }
+
+div {		
+	resize: auto;
+}
