@@ -2,6 +2,7 @@
 #flights {
 	width: 99%;
 	height: 99%;
+	margin-top: -30px;
 }
 
 #flights #search_flights_window{
@@ -390,4 +391,48 @@
 	text-align: center;
 	font-size: 50px;
 	color: #7CFA00;
+}
+
+.header table{
+	width:100%;
+	padding-left:20px;
+}
+
+.header{
+	background-color: snow;
+	position: fixed;
+	top: 0px;
+	box-sizing: border-box;
+	left: 0px;
+	right: 0px;
+	text-align: center;
+	z-index: 1;
+	font-weight: 400;
+}
+
+.content{
+	margin-top:150px;
+}
+
+.header ul{
+	padding-right:20px;
+}
+
+.header ul li{
+	text-align:right;
+	list-style-type: none;
+	display:inline;
+}
+
+.header ul li a{
+	color:grey;
+	text-decoration:none;
+}
+
+.header ul li a:hover{
+	color:#f0f0f0;
+}
+
+.header_top{
+	padding:10px;
 }
